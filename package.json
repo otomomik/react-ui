@@ -14,6 +14,9 @@
     "./*": {
       "import": "./dist/*.es.js"
     },
+    "./reset.css": {
+      "import": "./dist/reset.css"
+    },
     "./style.css": {
       "import": "./dist/style.css"
     }
