@@ -1,8 +1,23 @@
 {
   "name": "react-ui",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "license": "MIT",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/react-ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/react-ui.es.js"
+    },
+    "./*": {
+      "import": "./dist/*.es.js"
+    },
+    "./style.css": {
+      "import": "./dist/style.css"
+    }
+  },
   "scripts": {
     "dev": "vite --config vite.config.app.ts",
     "build:app": "tsc && vite build --config vite.config.app.ts",
@@ -25,6 +40,8 @@
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
+    "@vanilla-extract/css": "^1.14.1",
+    "@vanilla-extract/vite-plugin": "^4.0.4",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
