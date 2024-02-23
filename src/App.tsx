@@ -1,5 +1,5 @@
 import type { ComponentProps, FC } from 'react'
-import { Text, Title } from './components/lib'
+import { Column, Text, Title } from './components/lib'
 import { TextRecipeVariants } from './recipes/text.css'
 
 export const App: FC = () => {
@@ -14,19 +14,23 @@ export const App: FC = () => {
   ]
 
   return (
-    <div>
+    <Column gap="xl">
       <Title order={2}>Title</Title>
-      {orders.map((o) => (
-        <Title key={o} order={o}>
-          H{o}
-        </Title>
-      ))}
+      <Column gap="md">
+        {orders.map((o) => (
+          <Title key={o} order={o}>
+            H{o}
+          </Title>
+        ))}
+      </Column>
       <Title order={2}>Text</Title>
-      {textSizes.map((t) => (
-        <Text key={t} size={t}>
-          Text(size={t})
-        </Text>
-      ))}
-    </div>
+      <Column gap="md">
+        {textSizes.map((t) => (
+          <Text key={t} size={t}>
+            Text(size={t})
+          </Text>
+        ))}
+      </Column>
+    </Column>
   )
 }
